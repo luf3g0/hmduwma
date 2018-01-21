@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>We - commercetools</title>
+  <style>
+  
+  body {
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+  }
+
+  .background-image {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: blur(2px);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .where {  
+    text-align: center;
+    font-size: 6vw;
+    background: #ffffffbf;
+    display: block;
+    border-radius: 20px;
+    padding: 10px;
+    width: 160px;
+    margin: 10vh auto;
+  }
+  
+  .calendar {
+    margin-top: 30%;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20vw;
+    text-shadow: #000 1px 0 10px;
+    display: flex;
+  }
+  
+  .calendar .unit {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .calendar .unit small {
+    font-size: 3vw;
+  }
+
+  .phrase {  
+    background: #ffffffcc;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .phrase .top {
+    font-size: 5.6vw;
+  }
+  
+  .phrase .bottom {
+    font-size: 6.9vw;
+    font-weight: bolder;
+    color: #ad0000;
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+</head>
+<body id="body">
+  <div class="background-image"></div>
+  <div class="phrase">
+    <span class="top">ITS GOING TO TAKE THAT LONG</span>
+    <span class="bottom">UNTIL WE MEET AGAIN <3</span>
+  </div>
+  <div class="calendar">
+    <div class="unit">
+      <div id="days" class="days"></div>
+      <small>DAYS</small>
+    </div>
+    <div class="separator">:</div>
+    <div class="unit">
+      <div id="hours" class="hours"></div>
+      <small>HOURS</small>
+    </div>
+    <div class="separator">:</div>
+    <div class="unit">
+      <div id="minutes" class="minutes"></div>
+      <small>MINUTES</small>
+    </div>
+    <div class="separator">:</div>
+    <div class="unit">
+      <div id="seconds" class="seconds"></div>
+      <small>SECONDS</small>
+    </div>
+  </div>
+  <div class="where">
+    🇵🇱 KRAKOW
+  </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+<script src="scripts/moment.min.js"></script>
+<script src="scripts/countdown.min.js"></script>
+<!-- <script src="scripts/moment-countdown.min.js"></script> -->
+<script>
+//   $(function(){
+//     const dateStart = moment();
+//     const dateEnd = moment("2018-02-09");
+// 
+//   setInterval(function(){
+//     $('#days').html(countdown(dateStart, dateEnd, countdown.DEFAULTS, NaN, 0).toString());
+//   }, 1000);
+// });
+
+$(function(){
+  var randomBG = "1";
+  $(".background-image").css("backgroundImage", "url(img/" + (Math.random() * 5 | 1) + ".jpg)");
+});
+
+var dateStart = moment();
+var dateEnd = moment("2018-02-09");
+// var ts = countdown(dateStart, dateEnd, countdown.DEFAULTS, NaN, 0);
+countdown(
+  dateEnd,
+  function(ts) {
+    $('#days').text(ts.days);
+    $('#hours').text(ts.hours);
+    $('#minutes').text(ts.minutes);
+    $('#seconds').text(ts.seconds);
+  },
+  countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS
+);
+</script>
+</body>
+</html>
