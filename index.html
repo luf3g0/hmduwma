@@ -74,6 +74,15 @@
   <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 </head>
 <body id="body">
+  <script>
+  var pw = prompt("What's the password?", "");
+
+  if (pw != btoa("¦()­§")) {
+      document.getElementById("body").innerHTML =
+      "YOU ARE NOT AUTHORIZED HERE. GO AWAY";
+      window.location = "https://www.google.com/search?q=why+am+I+so+curious&oq=why+am+I+so+curious&aqs=chrome..69i57j0l5.7037j0j7&sourceid=chrome&ie=UTF-8";
+  }
+  </script>
   <div class="background-image"></div>
   <div class="phrase">
     <span class="top">ITS GOING TO TAKE THAT LONG</span>
@@ -101,7 +110,7 @@
     </div>
   </div>
   <div class="where">
-    🇵🇱 KRAKOW
+    🇨🇿 PRAGUE
   </div>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
@@ -124,7 +133,7 @@ $(function(){
 });
 
 var dateStart = moment();
-var dateEnd = moment("2018-02-09 08:25");
+var dateEnd = moment("2018-03-16 23:10");
 // var ts = countdown(dateStart, dateEnd, countdown.DEFAULTS, NaN, 0);
 countdown(
   dateEnd,
